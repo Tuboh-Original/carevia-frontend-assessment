@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carevia Frontend Engineering Assessment
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Welcome to the Carevia Frontend Engineering Assessment. In this practical challenge, you will be implementing a real-time tracking interface for our Central Operations Console. You are working with an existing Next.js App Router codebase and are expected to deliver production-grade TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## System Architecture & Code Constraints
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To mirror our production environment, your implementation must adhere to these strict engineering rules:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Strict Type Safety:** Absolute prohibition of any data designations. Every component props, API wrapper, and hook surface must be explicitly typed.
+- **Directory-by-Feature Design:** Do not drop files into a generic `components/` dumping ground. House your UI components, hooks, and types strictly under a modular `features/operations/` cluster directory.
+- **Robust State Isolation:** Do not rely on automated global states. Keep your UI mutations tightly bound to localized custom state hooks or context providers specifically designed for this module.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Critical Sprint Evaluation (Read Carefully)
 
-## Learn More
+At Carevia, our senior engineers operate with absolute technical ownership. We expect you to deeply audit your technical assets before writing lines of code.
 
-To learn more about Next.js, take a look at the following resources:
+Go into `src/app/api/operations/mock-data.json`. You will find that the backend engineering team left a structural omission in the schema definitions—the critical payload identifiers for authentication tracking or coordinate mapping keys are structurally inconsistent.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Your action required:** Do not blindly write code around a broken structural model. Before initializing your component build, open an Issue or write a dedicated Markdown log (`ARCHITECTURE_REVIEW.md`) at the root of the repository explicitly flagging this gap, diagnosing its impact on production stability, and stating your proposed correction.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Definition of Done (DoD)
 
-## Deploy on Vercel
+Your Pull Request will be evaluated automatically and manually by our engineering team against the following strict parameters:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Zero Console Leakage:** No raw operational data or debug console lines are allowed to leak into standard logs.
+- **Compile Cleanliness:** Codebase must build to production with completely zero linter bypasses or unresolved TypeScript interface compiler complaints.
+- **Proactive Engagement:** Successful identification and architectural documentation of the intentionally flawed asset mock model.

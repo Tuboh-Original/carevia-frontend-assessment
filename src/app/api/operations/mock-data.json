@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "incident_id": "AMB-2026-001",
+    "vehicle_type": "Ambulance",
+    "status": "dispatched",
+    "payload": {
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "severity": "CRITICAL"
+    }
+  },
+  {
+    "id": 2,
+    "incident_id": "AMB-2026-002",
+    "vehicle_type": "Ambulance",
+    "status": "en_route",
+    "payload": {
+      "lat": 6.4281,
+      "lng": 3.4219,
+      "severity": "MEDIUM"
+    }
+  },
+  {
+    "id": 3,
+    "uuid_legacy_field": "MOCK-999X", 
+    "vehicle_type": "Courier",
+    "status": "completed",
+    "payload": {
+      "lat": 6.6018,
+      "lng": 3.3515,
+      "severity": "LOW"
+    }
+  }
+]
